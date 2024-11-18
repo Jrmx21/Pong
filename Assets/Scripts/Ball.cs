@@ -11,6 +11,8 @@ public class Ball : MonoBehaviour
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _speedIncrement = 0.1f;
     [SerializeField] private float _umbralX = 3f;
+    [SerializeField] private Vector2 contactWithPlayer;
+    [SerializeField] private Vector2 lastRelativePosition;
 
     private Vector2 _velocityPrev;
     void Start()
@@ -41,23 +43,40 @@ public class Ball : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+             lastRelativePosition = this.transform.position - col.transform.position;
+            Debug.Log("relativa" + lastRelativePosition.y);
+            contactWithPlayer = col.contacts[0].point;
+            //avisame cuando choca en la parte superior, en medio o inferior
+            if (lastRelativePosition.y > 0.5f)
+            {
+                Debug.Log("choca arriba");
+            }
+            else if (lastRelativePosition.y < -0.5f)
+            {
+                Debug.Log("choca abajo");
+            }
+            else
+            {
+                Debug.Log("choca en medio");
+            }
             Vector2 v = _velocityPrev.normalized;
             _rigidBody2D.velocity = new Vector2(v.x * _speedIncrement, v.y * _speedIncrement);
             _rigidBody2D.velocity = new Vector2(-(_velocityPrev.x + v.x), _velocityPrev.y + v.y);
-            Debug.Log(_rigidBody2D.velocity);
         }
         else if (col.gameObject.CompareTag("Wall"))
         {
             _rigidBody2D.velocity = new Vector2(_velocityPrev.x, -_velocityPrev.y);
         }
         // Verifica la velocidad en x > umbral
-        if (Mathf.Abs(_rigidBody2D.velocity.x) < _umbralX && _umbralX > Mathf.Abs(_rigidBody2D.velocity.x))
+        if (Mathf.Abs(_rigidBody2D.velocity.x) < _umbralX)
         {
             _rigidBody2D.velocity = new Vector2(_umbralX, _rigidBody2D.velocity.y);
             Debug.Log("Velocidad en x menor al umbral");
         }
     }
-
-
-
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(contactWithPlayer, 0.1f);
+    }
 }
