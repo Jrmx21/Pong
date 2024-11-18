@@ -13,7 +13,7 @@ public class PlayerKinematic : MonoBehaviour
     {
         Transform roof = GameObject.Find("Techo").transform;
         float limit = roof.position.y - roof.localScale.y / 2 - transform.localScale.y / 2;
-        // arreglar el limite vertical
+        // TODO: arreglar el limite vertical
         // limiteVertical = limit;
 
     }
