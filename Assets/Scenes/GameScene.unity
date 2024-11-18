@@ -432,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
+  m_sharedMaterial: {fileID: 5613699194662810110, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -566,8 +566,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
+  m_sharedMaterial: {fileID: 5613699194662810110, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -822,7 +822,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
       propertyPath: m_Name
-      value: Pared (1)
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7048113719256323509, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -880,6 +888,14 @@ PrefabInstance:
     - target: {fileID: 1482161501497180645, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
       propertyPath: m_Name
       value: Pala2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482161501497180645, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482161501497180645, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1589464334364738845, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1043,8 +1059,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
+  m_sharedMaterial: {fileID: 5613699194662810110, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1134,6 +1150,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porteria1
       objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7048113719256323509, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
       propertyPath: m_LocalScale.x
       value: 12
@@ -1202,6 +1226,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porteria2
       objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7048113719256323509, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
       propertyPath: m_LocalScale.x
       value: 12
@@ -1265,6 +1297,10 @@ PrefabInstance:
     - target: {fileID: 1482161501497180645, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
       propertyPath: m_Name
       value: Pala
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482161501497180645, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1589464334364738845, guid: c57150f95acd21640a40ba75df3572ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1378,7 +1414,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
       propertyPath: m_Name
-      value: Pared
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966182379640768868, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7048113719256323509, guid: b3629d6dbd0c93643b029cc557ed9f9d, type: 3}
       propertyPath: m_LocalPosition.x

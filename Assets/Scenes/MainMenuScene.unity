@@ -236,12 +236,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'J1
+  m_text: 'J2
 
     CONTROLES
 
 
-    W-S'
+    FLECHAS'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
   m_sharedMaterial: {fileID: 5613699194662810110, guid: a1ded345a9102194191f04929e7b3c0d, type: 2}
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1478,7 +1478,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'J1
 
-    CONTROLES
+    Controles
 
 
     W-S'
