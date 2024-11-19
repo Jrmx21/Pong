@@ -129,6 +129,7 @@ MonoBehaviour:
   _speed: 10
   limiteVertical: 4.1
   player1: 1
+  inMovementTime: 0
 --- !u!61 &387413203810264541
 BoxCollider2D:
   m_ObjectHideFlags: 0
