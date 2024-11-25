@@ -108,13 +108,22 @@ public class Ball : MonoBehaviour
         else if (col.gameObject.CompareTag("Wall"))
         {
             _rigidBody2D.velocity = new Vector2(_velocityPrev.x, -_velocityPrev.y);
+            // Verifica la velocidad en x > umbral
+            if (Mathf.Abs(_rigidBody2D.velocity.x) < _umbralX)
+            {
+                if (_rigidBody2D.velocity.x > 0)
+                {
+                    _rigidBody2D.velocity = new Vector2(_umbralX, _rigidBody2D.velocity.y);
+                }
+                else
+                {
+                    _rigidBody2D.velocity = new Vector2(-_umbralX, _rigidBody2D.velocity.y);
+                }
+                Debug.Log("Velocidad en x menor al umbral");
+            }
         }
-        // Verifica la velocidad en x > umbral
-        if (Mathf.Abs(_rigidBody2D.velocity.x) < _umbralX)
-        {
-            _rigidBody2D.velocity = new Vector2(_umbralX, _rigidBody2D.velocity.y);
-            Debug.Log("Velocidad en x menor al umbral");
-        }
+
+
 
     }
 }
