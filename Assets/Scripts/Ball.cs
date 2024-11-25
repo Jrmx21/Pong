@@ -50,42 +50,54 @@ public class Ball : MonoBehaviour
             if (lastRelativePosition.y > 0.5f)
             {
                 Debug.Log("Choca arriba");
+
                 Vector2 v = _velocityPrev.normalized;
                 Vector2 normal = col.contacts[0].normal;
-                _rigidBody2D.velocity = new Vector2(_velocityPrev.x, _velocityPrev.y);
-                _rigidBody2D.velocity = Vector2.Reflect(_velocityPrev, normal);
 
-     
-                var angle = Vector2.Angle( _rigidBody2D.velocity, normal) * 2;
+                // Calcula el ángulo entre la velocidad previa y la normal
+                float originalAngle = Vector2.SignedAngle(normal, _velocityPrev);
+                Debug.Log("Original angle: " + originalAngle);
 
-                Debug.Log("original angle: " + Vector2.Angle(_rigidBody2D.velocity, normal));
-                Debug.Log("angle: " + angle);
-                // calcula el vector de reflexion con el angulo nuevo y establece la velocidad a la bola
-                var newDirectionAngle = Quaternion.AngleAxis(angle, Vector3.forward) * _velocityPrev;
+                // Duplica el ángulo
+                float newAngle = originalAngle * 2;
+                Debug.Log("New angle: " + newAngle);
 
+                // Calcula la nueva dirección a partir del ángulo duplicado
+                Vector2 newDirectionAngle = Quaternion.Euler(0, 0, newAngle) * -normal;
+
+                // Ajusta la velocidad de la bola a la nueva dirección
+                _rigidBody2D.velocity = newDirectionAngle.normalized * _velocityPrev.magnitude;
             }
+
             if (lastRelativePosition.y < -0.5f)
             {
                 Debug.Log("Choca abajo");
-                // Similar para el caso de impacto abajo
-                Vector2 v = _velocityPrev.normalized;
-                _rigidBody2D.velocity = new Vector2(_velocityPrev.x, _velocityPrev.y);
 
                 Vector2 normal = col.contacts[0].normal;
-                // angle dividido por 2
-                var angle = Vector2.Angle(_velocityPrev, normal) / 2;
-                // calcula el vector de reflexion con el angulo nuevo y establece la velocidad a la bola
-                var newDirectionAngle = Quaternion.AngleAxis(angle, Vector3.forward) * _velocityPrev;
-                _rigidBody2D.velocity = Vector2.Reflect(newDirectionAngle, normal);
+                Vector2 velocity = _velocityPrev.normalized;
 
+                // Asegúrate de calcular el ángulo relativo correctamente
+                float originalAngle = Vector2.SignedAngle(normal, velocity);
+                Debug.Log("Original angle: " + originalAngle);
 
+                // Aplica el factor de ajuste (en este caso, 0.5 para reducir el ángulo)
+                float newAngle = originalAngle * 0.5f; // Cambiar según necesidad
+                Debug.Log("New angle: " + newAngle);
+
+                // Aplica la rotación del ángulo
+                Vector2 newDirectionAngle = Quaternion.Euler(0, 0, newAngle) * normal;
+
+                // Asegura que la velocidad mantenga la misma magnitud
+                _rigidBody2D.velocity = newDirectionAngle.normalized * _velocityPrev.magnitude;
             }
+
             if (lastRelativePosition.y > -0.5f && lastRelativePosition.y < 0.5f)
             {
                 Debug.Log("choca en medio");
                 Vector2 v = _velocityPrev.normalized;
                 _rigidBody2D.velocity = new Vector2(v.x * _speedIncrement, v.y * _speedIncrement);
                 _rigidBody2D.velocity = new Vector2(-(_velocityPrev.x + v.x), _velocityPrev.y + v.y);
+
 
             }
             Debug.DrawRay(col.contacts[0].point, col.contacts[0].normal, Color.yellow, 2f);
