@@ -1397,7 +1397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958936034074242897, guid: cde4b1892564a8e49994a6e12fad692a, type: 3}
       propertyPath: _speed
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2958936034074242897, guid: cde4b1892564a8e49994a6e12fad692a, type: 3}
       propertyPath: umbralX

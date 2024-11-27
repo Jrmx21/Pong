@@ -27,15 +27,12 @@ public class PlayerKinematic : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                inMovementTime = Mathf.Clamp(inMovementTime, 0.3f, 1f);
-                inMovementTime += Time.deltaTime;
-                transform.position = new Vector2(transform.position.x, transform.position.y + _speed * inMovementTime * Time.deltaTime);
+
+                transform.position = new Vector2(transform.position.x, transform.position.y + _speed * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                inMovementTime = Mathf.Clamp(inMovementTime, 0.3f, 1f);
-                inMovementTime += Time.deltaTime;
-                transform.position = new Vector2(transform.position.x, transform.position.y - _speed * inMovementTime * Time.deltaTime);
+                transform.position = new Vector2(transform.position.x, transform.position.y - _speed * Time.deltaTime);
             }
             else
             {
@@ -46,8 +43,17 @@ public class PlayerKinematic : MonoBehaviour
         //player 2
 
         {
-            float dirMove = Input.GetAxisRaw("Vertical2");
-            transform.position += dirMove * _speed * Time.deltaTime * Vector3.up;
+            //player 2
+
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+
+                transform.position = new Vector2(transform.position.x, transform.position.y + _speed * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y - _speed * Time.deltaTime);
+            }
         }
         //limita el movimiento del player
         if (transform.position.y > limiteVertical)
